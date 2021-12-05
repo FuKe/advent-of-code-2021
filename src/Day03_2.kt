@@ -1,3 +1,5 @@
+import models.BinaryNumber
+
 fun main() {
     val puzzleInput: List<BinaryNumber> = readInput("Day03.txt").map { it.toBinaryNumber() }
 

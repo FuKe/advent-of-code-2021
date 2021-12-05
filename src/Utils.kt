@@ -1,3 +1,5 @@
+import models.BinaryNumber
+import models.Bit
 import java.io.File
 
 /**
