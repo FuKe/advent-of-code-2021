@@ -1,4 +1,5 @@
 import models.BinaryNumber
+import models.BingoPlate
 import models.Bit
 import java.io.File
 
@@ -56,3 +57,29 @@ fun List<BinaryNumber>.filterByBitAtPosition(bit: Bit, position: Int): List<Bina
     filter {
         it.bits[position] == bit
     }
+
+fun parseBingoPlates(rawPuzzleInput: List<String>): List<BingoPlate> {
+    var convertedPlates: List<BingoPlate> = emptyList()
+
+    var plateRows: MutableList<List<Int>> = mutableListOf()
+    // First bingo plate starts at index 2
+    for (i in 2 until rawPuzzleInput.size) {
+        val line: String = rawPuzzleInput[i]
+        if (line.isBlank()) {
+            val plate = BingoPlate(plateRows)
+            convertedPlates = convertedPlates + plate
+            plateRows = mutableListOf()
+        } else {
+            val bingoRow: List<Int> = line
+                .split(" ")
+                .filter {
+                    it.isNotBlank()
+                }
+                .map { it.toInt() }
+
+            plateRows += bingoRow
+        }
+    }
+
+    return convertedPlates
+}
