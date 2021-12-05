@@ -16,7 +16,7 @@ fun main() {
 }
 
 // Returns the last number drawn when a winner was found and the winning bingo plate.
-fun play(numbersToDraw: List<Int>, plates: List<BingoPlate>): Pair<Int, BingoPlate> {
+private fun play(numbersToDraw: List<Int>, plates: List<BingoPlate>): Pair<Int, BingoPlate> {
     numbersToDraw.forEach { num ->
         plates.forEach { plate ->
             if (plate.plateHasNumber(num)) {
