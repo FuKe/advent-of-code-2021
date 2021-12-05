@@ -6,7 +6,7 @@ class Bit(
     val value: Int
 ) {
     init {
-        assert(value == 0 || value == 1)
+        check(value == 0 || value == 1)
     }
 
     fun flip(): Bit =

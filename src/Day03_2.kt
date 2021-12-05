@@ -14,14 +14,14 @@ fun main() {
 
 fun findOxygenGeneratorRating(input: List<BinaryNumber>): Int {
     val filtered: List<BinaryNumber> = filterByMostSignificantBit(input, 0)
-    assert(filtered.size == 1)
+    check(filtered.size == 1)
 
     return filtered[0].toNumeric()
 }
 
 fun findCo2ScrubberRating(input: List<BinaryNumber>): Int {
     val filtered: List<BinaryNumber> = filterByLeastSignificantBit(input, 0)
-    assert(filtered.size == 1)
+    check(filtered.size == 1)
 
     return filtered[0].toNumeric()
 }
