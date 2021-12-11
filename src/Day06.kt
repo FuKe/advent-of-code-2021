@@ -13,7 +13,7 @@ fun main() {
     println("Part two result: $partTwoResult")
 }
 
-fun partOne(initialFish: List<Int>): Int {
+private fun partOne(initialFish: List<Int>): Int {
     val result: MutableList<Int> = initialFish.toMutableList()
 
     for (i in 1 .. 80) {
@@ -33,7 +33,7 @@ fun partOne(initialFish: List<Int>): Int {
     return result.size
 }
 
-fun partTwo(initialFish: List<Int>): Long {
+private fun partTwo(initialFish: List<Int>): Long {
     var cycleMap: MutableMap<Int, Long> = mutableMapOf(
         0 to 0,
         1 to 0,
@@ -57,7 +57,7 @@ fun partTwo(initialFish: List<Int>): Long {
     return cycleMap.values.sum()
 }
 
-fun simulateDay(fishMap: MutableMap<Int, Long>): MutableMap<Int, Long> {
+private fun simulateDay(fishMap: MutableMap<Int, Long>): MutableMap<Int, Long> {
     return mutableMapOf(
         0 to fishMap[1]!!,
         1 to fishMap[2]!!,
@@ -71,7 +71,7 @@ fun simulateDay(fishMap: MutableMap<Int, Long>): MutableMap<Int, Long> {
     )
 }
 
-fun test() {
+private fun test() {
     val initialState: List<Int> = listOf(3, 4, 3, 1, 2)
     val partOneResult = partOne(initialState)
     check(partOneResult == 5934)
